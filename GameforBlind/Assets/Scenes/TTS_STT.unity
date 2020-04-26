@@ -306,6 +306,7 @@ GameObject:
   m_Component:
   - component: {fileID: 477887407}
   - component: {fileID: 477887406}
+  - component: {fileID: 477887408}
   m_Layer: 0
   m_Name: TTS_STT
   m_TagString: Untagged
@@ -333,6 +334,8 @@ MonoBehaviour:
   _recognizeModel: 
   voice: 10
   outputAudioSource: {fileID: 0}
+  waitedWordList:
+  - {fileID: 477887408}
 --- !u!4 &477887407
 Transform:
   m_ObjectHideFlags: 0
@@ -347,6 +350,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &477887408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 477887405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67feacf2f1e9c724bb9aa4f87d30eded, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stateStatus: 0
+  waitedWords:
+  - szvssv
+  - vsszv
+  output:
+  - dgsgs
+  - gesgeg
 --- !u!1 &799957533
 GameObject:
   m_ObjectHideFlags: 0

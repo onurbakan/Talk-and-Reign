@@ -73,6 +73,9 @@ namespace IBM.Watsson.Examples
         private string mytext = "";
         private string PlayerName = "";
 
+
+
+
         private SpeechToTextService _STTservice;
 
         // TTS
@@ -112,16 +115,17 @@ namespace IBM.Watsson.Examples
         // A queue for storing the speech AudioClips for playing
         private Queue<AudioClip> audioQueue = new Queue<AudioClip>();
 
-        //public string[] textArray;
 
-        public enum InputFieldTrigger { onValueChanged, onEndEdit };
-
-        //[SerializeField]
-        private InputField inputField;
+        /// <summary>
+        /// //Game Waited Word Area
+        /// </summary>
+        [SerializeField]
+        private WaitedWordList[] waitedWordList;
 
 
         void Start()
         {
+
             audioStatus = ProcessingStatus.Idle;
             LogSystem.InstallDefaultReactors();
             Runnable.Run(CreateService());
@@ -131,6 +135,9 @@ namespace IBM.Watsson.Examples
                 gameObject.AddComponent<AudioSource>();
                 outputAudioSource = gameObject.GetComponent<AudioSource>();
             }
+
+
+
         }
 
         private void Update()
@@ -141,6 +148,16 @@ namespace IBM.Watsson.Examples
             if (audioQueue.Count > 0 && !outputAudioSource.isPlaying)
             {
                 PlayClip(audioQueue.Dequeue());
+            }
+
+
+            if (Input.GetKey(KeyCode.S))
+            {
+                StartRecording();
+            }
+            else
+            {
+                StopRecording();
             }
 
 
@@ -181,11 +198,31 @@ namespace IBM.Watsson.Examples
 
             // Yazilan string baslangicta asistan tarafından söylenir
 
-
             Active = true;
+            StartCheck();
+
+
             StartRecording();
-            textspeech("Hello welcome to the my game. My name is Olivia. What is your name ?");
         }
+
+
+        public void StartCheck()
+        {
+            if (PlayerPrefs.GetString("playerName") != "")
+            {
+                Debug.Log(PlayerPrefs.GetString("playerName"));
+
+                PlayerName = PlayerPrefs.GetString("playerName");
+                textspeech("Welcome " + PlayerName + " to our game!");
+            }
+            else
+            {
+                textspeech("Hello welcome to the my game. My name is Olivia. What is your name ?");
+
+            }
+        }
+
+
 
 
         private void textspeech(string textt)
@@ -235,11 +272,9 @@ namespace IBM.Watsson.Examples
             }
         }
 
-        public bool Active
-        {
+        public bool Active {
             get { return _STTservice.IsListening; }
-            set
-            {
+            set {
                 if (value && !_STTservice.IsListening)
                 {
                     _STTservice.RecognizeModel = (string.IsNullOrEmpty(_recognizeModel) ? "en-US_BroadbandModel" : _recognizeModel);
@@ -365,53 +400,15 @@ namespace IBM.Watsson.Examples
                         {
                             textspeech("Thank you blue");
                         }
-                        if (alt.transcript.Contains("red") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
+
+
+                        for (int i = 0; i < waitedWordList[0].waitedWords.Length; i++)
                         {
-                            textspeech("Thank you red");
+                            if (alt.transcript.Contains(waitedWordList[0].waitedWords[i])) // needs to be final or ECHO happens
+                            {
+                                textspeech(waitedWordList[0].output[i]);
+                            }
                         }
-                        //  DENEME SON  //
-
-
-                        if (alt.transcript.Contains("my name is") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
-                        {
-                            // textspeech("is it correct ?");
-                            textspeech("Okey your name is " + alt.transcript.Substring(10));
-                            PlayerName = alt.transcript.Substring(10);
-
-                        }
-
-                        if (alt.transcript.Contains("what is my name") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
-                        {
-                            textspeech("your name is" + PlayerName);
-                        }
-
-                        if (alt.transcript.Contains("say my name") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
-                        {
-                            textspeech("your name is" + PlayerName);
-                        }
-
-                        if (alt.transcript.Contains("who do you love") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
-                        {
-                            textspeech(" i love furkan ");
-                        }
-
-                        
-                        if (alt.transcript.Contains("who do you like") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
-                        {
-                            textspeech(" i like gurkan ");
-                        }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -451,5 +448,17 @@ namespace IBM.Watsson.Examples
                 }
             }
         }
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }
