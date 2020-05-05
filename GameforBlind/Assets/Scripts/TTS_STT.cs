@@ -73,7 +73,7 @@ namespace IBM.Watsson.Examples
         private string mytext = "";
         private string PlayerName = "";
 
-
+        public bool canListen;
 
 
         private SpeechToTextService _STTservice;
@@ -151,7 +151,7 @@ namespace IBM.Watsson.Examples
             }
 
 
-            if (Input.GetKey(KeyCode.S))
+            if (canListen)
             {
                 StartRecording();
             }
@@ -199,50 +199,33 @@ namespace IBM.Watsson.Examples
             // Yazilan string baslangicta asistan tarafından söylenir
 
             Active = true;
-            StartCheck();
 
 
-            StartRecording();
-        }
-
-
-        public void StartCheck()
-        {
-            if (PlayerPrefs.GetString("playerName") != "")
-            {
-                Debug.Log(PlayerPrefs.GetString("playerName"));
-
-                PlayerName = PlayerPrefs.GetString("playerName");
-                textspeech("Welcome " + PlayerName + " to our game!");
-            }
-            else
-            {
-                textspeech("Hello welcome to the my game. My name is Olivia. What is your name ?");
-
-            }
         }
 
 
 
 
-        private void textspeech(string textt)
-        {
-            byte[] synthesizeResponse = null;
-            AudioClip clip = null;
-            tts_service.Synthesize(
-                callback: (DetailedResponse<byte[]> response, IBMError error) =>
-                {
-                    synthesizeResponse = response.Result;
-                    clip = WaveFile.ParseWAV("myClip", synthesizeResponse);
 
-                    //Place the new clip into the audio queue.
-                    audioQueue.Enqueue(clip);
-                },
-                text: textt,
-                voice: "en-" + voice,
-                accept: "audio/wav"
-            );
-        }
+
+        /* private void textspeech(string textt)
+         {
+             byte[] synthesizeResponse = null;
+             AudioClip clip = null;
+             tts_service.Synthesize(
+                 callback: (DetailedResponse<byte[]> response, IBMError error) =>
+                 {
+                     synthesizeResponse = response.Result;
+                     clip = WaveFile.ParseWAV("myClip", synthesizeResponse);
+
+                     //Place the new clip into the audio queue.
+                     audioQueue.Enqueue(clip);
+                 },
+                 text: textt,
+                 voice: "en-" + voice,
+                 accept: "audio/wav"
+             );
+         }*/
 
 
         public void AddTextToQueue(string text)
@@ -396,21 +379,16 @@ namespace IBM.Watsson.Examples
                         ResultsSTTField.text = text;
 
                         //  DENEME BAŞ  //
-                        if (alt.transcript.Contains("blue") && ResultsSTTField.text.Contains("Final")) // needs to be final or ECHO happens
+                        if (alt.transcript.Contains("yes") && ResultsSTTField.text.Contains("Interim")) // needs to be final or ECHO happens
                         {
-                            textspeech("Thank you blue");
+                            States.instance.IncreaseIndex();
                         }
 
-
-                        for (int i = 0; i < waitedWordList[0].waitedWords.Length; i++)
+                        if (alt.transcript.Contains("no") && ResultsSTTField.text.Contains("Interim")) // needs to be final or ECHO happens
                         {
-                            if (alt.transcript.Contains(waitedWordList[0].waitedWords[i])) // needs to be final or ECHO happens
-                            {
-                                textspeech(waitedWordList[0].output[i]);
-                            }
+                            States.instance.DecreaseIndex();
+
                         }
-
-
 
 
 
