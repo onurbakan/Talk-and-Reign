@@ -119,9 +119,6 @@ namespace IBM.Watsson.Examples
         /// <summary>
         /// //Game Waited Word Area
         /// </summary>
-        [SerializeField]
-        private WaitedWordList[] waitedWordList;
-
 
         void Start()
         {
@@ -205,27 +202,6 @@ namespace IBM.Watsson.Examples
 
 
 
-
-
-
-        /* private void textspeech(string textt)
-         {
-             byte[] synthesizeResponse = null;
-             AudioClip clip = null;
-             tts_service.Synthesize(
-                 callback: (DetailedResponse<byte[]> response, IBMError error) =>
-                 {
-                     synthesizeResponse = response.Result;
-                     clip = WaveFile.ParseWAV("myClip", synthesizeResponse);
-
-                     //Place the new clip into the audio queue.
-                     audioQueue.Enqueue(clip);
-                 },
-                 text: textt,
-                 voice: "en-" + voice,
-                 accept: "audio/wav"
-             );
-         }*/
 
 
         public void AddTextToQueue(string text)
@@ -395,23 +371,7 @@ namespace IBM.Watsson.Examples
 
                     }
 
-                    if (res.keywords_result != null && res.keywords_result.keyword != null)
-                    {
-                        foreach (var keyword in res.keywords_result.keyword)
-                        {
-                            Log.Debug("ExampleStreaming.OnRecognize()", "keyword: {0}, confidence: {1}, start time: {2}, end time: {3}", keyword.normalized_text, keyword.confidence, keyword.start_time, keyword.end_time);
-                        }
-                    }
 
-                    if (res.word_alternatives != null)
-                    {
-                        foreach (var wordAlternative in res.word_alternatives)
-                        {
-                            Log.Debug("ExampleStreaming.OnRecognize()", "Word alternatives found. Start time: {0} | EndTime: {1}", wordAlternative.start_time, wordAlternative.end_time);
-                            foreach (var alternative in wordAlternative.alternatives)
-                                Log.Debug("ExampleStreaming.OnRecognize()", "\t word: {0} | confidence: {1}", alternative.word, alternative.confidence);
-                        }
-                    }
                 }
             }
         }

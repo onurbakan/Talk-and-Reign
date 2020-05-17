@@ -1,22 +1,36 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public AudioSource audiom;
-    private void Start()
-    {
-    }
+    public AudioSource _audioSource;
+    public bool canListen;
+
+    public Action soundFinished;
+
 
     private void Update()
     {
-        if (audiom.time >= 10)// audiom.clip.length)
+        if (!_audioSource.isPlaying && canListen)
         {
-            audiom.Stop();
+            Debug.Log("[Sound Manager] : Şarkı Bitti");
+            canListen = false;
+            soundFinished?.Invoke();
         }
 
-        //Debug.Log(m_MyAudioSource.clip.length);
-
     }
+
+
+    public void PlayCurrentState(SO_State input)
+    {
+        Debug.Log("[Sound Manager] : Şarkım Başladı");
+
+        _audioSource.clip = input.stateSound;
+        _audioSource.Play();
+        canListen = true;
+    }
+
+
 }

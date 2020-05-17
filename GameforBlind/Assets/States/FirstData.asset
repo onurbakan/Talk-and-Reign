@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3bb38ae7b54a94eaa77d64fff709a5, type: 3}
+  m_Name: FirstData
+  m_EditorClassIdentifier: 
+  stateID: 1
+  positiveNextState: {fileID: 11400000, guid: 1d60d49f317b7ab4cb04e09305cb0984, type: 2}
+  negativeNextState: {fileID: 11400000, guid: fbf6e0fd7b0ea3e4084c0cf4ad9ab2ad, type: 2}
+  stateType: 1
+  stateSound: {fileID: 8300000, guid: 85e36c758478fc74f804dc19323809af, type: 3}
+  positiveFirstStepValue: 10
+  positiveSecondStepValue: 15
+  positiveThirdStepValue: 20
+  negativeFirstStepValue: -10
+  negativeSeconStepValue: -15
+  negativeThirdStepValue: 0
+  canInform: 0
