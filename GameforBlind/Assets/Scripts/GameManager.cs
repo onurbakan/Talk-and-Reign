@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
     public Text status1;
     public Text status2;
     public Text status3;
-
+    public Text years;
 
 
     private void Start()
@@ -31,12 +31,7 @@ public class GameManager : MonoBehaviour
         soundManager.PlayCurrentState(currentState);
         soundManager.soundFinished += SoundFinished;
         UpdateUI();
-
-
     }
-
-
-
 
 
 
@@ -54,10 +49,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("[Game Manager] :[Answer] Input Açtım");
 
             StartInput();
-
         }
-
-
     }
 
 
@@ -109,6 +101,7 @@ public class GameManager : MonoBehaviour
         status1.text = firstStatus.ToString();
         status2.text = seconStatus.ToString();
         status3.text = thirdStatus.ToString();
+        years.text = currentState.stateID.ToString();
 
     }
 }

@@ -196,12 +196,7 @@ namespace IBM.Watsson.Examples
             // Yazilan string baslangicta asistan tarafından söylenir
 
             Active = true;
-
-
         }
-
-
-
 
 
         public void AddTextToQueue(string text)
@@ -365,12 +360,25 @@ namespace IBM.Watsson.Examples
                             States.instance.DecreaseIndex();
 
                         }
-
-
-
-
+                    }
+                    
+                    if (res.keywords_result != null && res.keywords_result.keyword != null)
+                    {
+                        foreach (var keyword in res.keywords_result.keyword)
+                        {
+                            Log.Debug("ExampleStreaming.OnRecognize()", "keyword: {0}, confidence: {1}, start time: {2}, end time: {3}", keyword.normalized_text, keyword.confidence, keyword.start_time, keyword.end_time);
+                        }
                     }
 
+                    if (res.word_alternatives != null)
+                    {
+                        foreach (var wordAlternative in res.word_alternatives)
+                        {
+                            Log.Debug("ExampleStreaming.OnRecognize()", "Word alternatives found. Start time: {0} | EndTime: {1}", wordAlternative.start_time, wordAlternative.end_time);
+                            foreach (var alternative in wordAlternative.alternatives)
+                                Log.Debug("ExampleStreaming.OnRecognize()", "\t word: {0} | confidence: {1}", alternative.word, alternative.confidence);
+                        }
+                    }
 
                 }
             }
@@ -386,17 +394,5 @@ namespace IBM.Watsson.Examples
                 }
             }
         }
-
-
-
-
-
-
-
-
-
-
-
-
     }
 }
