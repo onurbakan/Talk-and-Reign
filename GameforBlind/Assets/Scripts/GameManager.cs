@@ -11,9 +11,9 @@ public class GameManager : MonoBehaviour
     public SO_State currentState;
     public SoundManager soundManager;
 
-    float firstStatus = 100;
-    float seconStatus = 100;
-    float thirdStatus = 100;
+    float firstStatus = 10;
+    float seconStatus = 10;
+    float thirdStatus = 10;
 
     bool soundPlaying;
 
@@ -65,9 +65,9 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log("Yes Function");
 
-        firstStatus += currentState.positiveFirstStepValue;
-        seconStatus += currentState.positiveSecondStepValue;
-        thirdStatus += currentState.positiveThirdStepValue;
+        firstStatus += currentState.positivePopulationValue;
+        seconStatus += currentState.positiveMoneyValue;
+        thirdStatus += currentState.positiveArmyValue;
         UpdateUI();
 
         currentState = currentState.positiveNextState;
@@ -79,9 +79,9 @@ public class GameManager : MonoBehaviour
     public void SaidNo()
     {
         Debug.Log("No Function");
-        firstStatus += currentState.negativeFirstStepValue;
-        seconStatus += currentState.negativeSeconStepValue;
-        thirdStatus += currentState.negativeThirdStepValue;
+        firstStatus += currentState.negativePopulationValue;
+        seconStatus += currentState.negativeMoneyValue;
+        thirdStatus += currentState.negativeArmyValue;
         UpdateUI();
         currentState = currentState.negativeNextState;
         soundManager.PlayCurrentState(currentState);

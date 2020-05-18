@@ -11,13 +11,13 @@ public class SO_State : ScriptableObject
     public StateType stateType;
     public AudioClip stateSound;
 
-    public float positiveFirstStepValue;
-    public float positiveSecondStepValue;
-    public float positiveThirdStepValue;
+    public float positivePopulationValue;
+    public float positiveMoneyValue;
+    public float positiveArmyValue;
 
-    public float negativeFirstStepValue;
-    public float negativeSeconStepValue;
-    public float negativeThirdStepValue;
+    public float negativePopulationValue;
+    public float negativeMoneyValue;
+    public float negativeArmyValue;
 
 
     public bool canInform;
