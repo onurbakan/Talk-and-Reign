@@ -539,8 +539,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 364.27, y: -206.2}
-  m_SizeDelta: {x: -728.5419, y: -412.40674}
+  m_AnchoredPosition: {x: 195, y: -99.000015}
+  m_SizeDelta: {x: -732.9971, y: -412.40674}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &614847999
 MonoBehaviour:
@@ -617,7 +617,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 198, y: 175}
+  m_AnchoredPosition: {x: 143.3, y: 118.31173}
   m_SizeDelta: {x: -737.1848, y: -443.66406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &699491824
@@ -761,7 +761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210, y: 164}
+  m_AnchoredPosition: {x: -148.1, y: 118.91173}
   m_SizeDelta: {x: -737.1847, y: -443.66354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1096754646
@@ -907,7 +907,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Army
+  m_Text: Army Value
 --- !u!222 &1389504785
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -932,7 +932,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 198, y: 122.490005}
+  m_AnchoredPosition: {x: 143.3, y: 65.8}
   m_SizeDelta: {x: -737.1848, y: -443.66406}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1802310996
@@ -985,8 +985,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
-  m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ScaleFactor: 1.37
+  m_ReferenceResolution: {x: 0, y: 864}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1076,7 +1076,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: 174}
+  m_AnchoredPosition: {x: -3.9000244, y: 118.3117}
   m_SizeDelta: {x: -737.18164, y: -443.66354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1833333955
@@ -1154,7 +1154,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -210, y: 111.48999}
+  m_AnchoredPosition: {x: -148.1, y: 66.4}
   m_SizeDelta: {x: -737.1847, y: -443.66354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1856190728
@@ -1197,7 +1197,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Population
+  m_Text: 'Population Value
 
 '
 --- !u!1 &1932825058
@@ -1234,7 +1234,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1, y: 121.490005}
+  m_AnchoredPosition: {x: -3.899994, y: 65.8}
   m_SizeDelta: {x: -737.18164, y: -443.66354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1932825060
@@ -1277,7 +1277,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Money
+  m_Text: Money Value
 --- !u!1 &1956289175
 GameObject:
   m_ObjectHideFlags: 0
@@ -1431,6 +1431,6 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 285, y: -206.2}
+  m_AnchoredPosition: {x: 118, y: -99}
   m_SizeDelta: {x: -728.5419, y: -412.40674}
   m_Pivot: {x: 0.5, y: 0.5}
