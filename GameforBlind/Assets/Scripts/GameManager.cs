@@ -7,6 +7,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public SO_State firstState;
     public TTS_STT stt;
     public SO_State currentState;
     public SoundManager soundManager;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     float thirdStatus = 10;
 
     bool soundPlaying;
+    bool currentStateAnswer;
 
     public Text status1;
     public Text status2;
@@ -30,10 +32,25 @@ public class GameManager : MonoBehaviour
         States.instance.saidNo += SaidNo;
         soundManager.PlayCurrentState(currentState);
         soundManager.soundFinished += SoundFinished;
+        soundManager.informFinished += InformFinished;
         UpdateUI();
     }
 
+    private void InformFinished()
+    {
+        if (currentStateAnswer)
+        {
+            currentState = currentState.positiveNextState;
 
+            soundManager.PlayCurrentState(currentState);
+        }
+        else
+        {
+            currentState = currentState.negativeNextState;
+
+            soundManager.PlayCurrentState(currentState);
+        }
+    }
 
     private void SoundFinished()
     {
@@ -43,6 +60,7 @@ public class GameManager : MonoBehaviour
             Debug.Log("[Game Manager] :[Only Sound] Yes Dedim");
             currentState = currentState.positiveNextState;
             soundManager.PlayCurrentState(currentState);
+
         }
         else if (currentState.stateType == StateType.AnswerSound)
         {
@@ -50,11 +68,17 @@ public class GameManager : MonoBehaviour
 
             StartInput();
         }
+        if (currentState.checkPoint)
+        {
+            firstState.positiveNextState = currentState;
+        }
+
     }
 
 
     public void SaidYes()
     {
+        currentStateAnswer = true;
         Debug.Log("Yes Function");
 
         firstStatus += currentState.positivePopulationValue;
@@ -62,21 +86,27 @@ public class GameManager : MonoBehaviour
         thirdStatus += currentState.positiveArmyValue;
         UpdateUI();
 
-        currentState = currentState.positiveNextState;
-        soundManager.PlayCurrentState(currentState);
+
+        soundManager.InformUser(currentState, true);
+        /* currentState = currentState.positiveNextState;
+
+         soundManager.PlayCurrentState(currentState);*/
 
         StopInput();
     }
 
     public void SaidNo()
     {
+        currentStateAnswer = false;
+        soundManager.InformUser(currentState, false);
+
         Debug.Log("No Function");
         firstStatus += currentState.negativePopulationValue;
         seconStatus += currentState.negativeMoneyValue;
         thirdStatus += currentState.negativeArmyValue;
         UpdateUI();
-        currentState = currentState.negativeNextState;
-        soundManager.PlayCurrentState(currentState);
+        /*  currentState = currentState.negativeNextState;
+          soundManager.PlayCurrentState(currentState);*/
         StopInput();
     }
 

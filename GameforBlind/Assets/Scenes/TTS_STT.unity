@@ -453,6 +453,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 469011346}
   canListen: 0
+  canInform: 0
+  goldPositive: {fileID: 8300000, guid: cd2dfff500b7184419863c466abf2351, type: 3}
+  armyPositive: {fileID: 8300000, guid: cb70ce63fccc0f84fb78716a95ecdce2, type: 3}
+  populationPositive: {fileID: 8300000, guid: cdd62e7d0acfb7943b892ed7200b24c0, type: 3}
+  goldNegative: {fileID: 8300000, guid: c9241b075d3cd864d941264b47226d2a, type: 3}
+  armyNegative: {fileID: 8300000, guid: e71af0040e6016b4f94e12706b8631e2, type: 3}
+  populationNegative: {fileID: 8300000, guid: 5df48097d0fd16945a64fced29444e69, type: 3}
+  myAudioList: []
 --- !u!1 &477887405
 GameObject:
   m_ObjectHideFlags: 0
@@ -557,7 +565,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -635,7 +642,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -779,7 +785,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -836,8 +841,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd653c4687dc260438be6c8124b045c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
   stt: {fileID: 477887406}
-  currentState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
+  currentState: {fileID: 11400000, guid: 8a04cfca07253bf4cb1da07de967fb67, type: 2}
   soundManager: {fileID: 469011348}
   status1: {fileID: 1856190729}
   status2: {fileID: 1932825061}
@@ -890,7 +896,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1094,7 +1099,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1180,7 +1184,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1234,7 +1237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -3.899994, y: 65.8}
+  m_AnchoredPosition: {x: -3.8999634, y: 65.79999}
   m_SizeDelta: {x: -737.18164, y: -443.66354}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1932825060
@@ -1260,7 +1263,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1330,7 +1332,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1389,7 +1390,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []

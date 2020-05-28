@@ -19,8 +19,14 @@ MonoBehaviour:
   stateSound: {fileID: 8300000, guid: aa1fbf5055fd2864fbc49916f4063cf2, type: 3}
   positivePopulationValue: 1
   positiveMoneyValue: 0
-  positiveArmyValue: 0
+  positiveArmyValue: -1
   negativePopulationValue: -1
   negativeMoneyValue: 0
   negativeArmyValue: 0
-  canInform: 0
+  checkPoint: 0
+  canInformGoldPos: 0
+  canInformArmyPos: 0
+  canInformPopulationPos: 0
+  canInformGoldNeg: 0
+  canInformArmyNeg: 0
+  canInformPopulationNeg: 0
