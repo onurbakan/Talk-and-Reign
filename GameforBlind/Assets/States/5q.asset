@@ -23,4 +23,17 @@ MonoBehaviour:
   negativePopulationValue: 0
   negativeMoneyValue: 0
   negativeArmyValue: -1
+  checkPoint: 0
   canInform: 0
+  canInformGoldPos: 0
+  canInformArmyPos: 1
+  canInformPopulationPos: 0
+  canInformGoldNeg: 0
+  canInformArmyNeg: 0
+  canInformPopulationNeg: 0
+  canInformGoldPos1: 0
+  canInformArmyPos1: 0
+  canInformPopulationPos1: 0
+  canInformGoldNeg1: 0
+  canInformArmyNeg1: 1
+  canInformPopulationNeg1: 0
