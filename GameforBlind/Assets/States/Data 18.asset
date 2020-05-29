@@ -17,23 +17,23 @@ MonoBehaviour:
   negativeNextState: {fileID: 11400000, guid: 9c1cc193adda1be45af8cdc0317023a4, type: 2}
   stateType: 1
   stateSound: {fileID: 8300000, guid: 0077f37701fd7f64faef5c91d999f1e1, type: 3}
-  positivePopulationValue: 0
-  positiveMoneyValue: 0
+  positivePopulationValue: 1
+  positiveMoneyValue: -1
   positiveArmyValue: 0
-  negativePopulationValue: 0
-  negativeMoneyValue: 0
+  negativePopulationValue: -1
+  negativeMoneyValue: 1
   negativeArmyValue: 0
   checkPoint: 0
   canInform: 0
   canInformGoldPos: 0
   canInformArmyPos: 0
-  canInformPopulationPos: 0
-  canInformGoldNeg: 0
+  canInformPopulationPos: 1
+  canInformGoldNeg: 1
   canInformArmyNeg: 0
   canInformPopulationNeg: 0
-  canInformGoldPos1: 0
+  canInformGoldPos1: 1
   canInformArmyPos1: 0
   canInformPopulationPos1: 0
   canInformGoldNeg1: 0
   canInformArmyNeg1: 0
-  canInformPopulationNeg1: 0
+  canInformPopulationNeg1: 1

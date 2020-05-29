@@ -847,7 +847,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firstState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
   stt: {fileID: 477887406}
-  currentState: {fileID: 11400000, guid: bc0b0fb24f8ed164b9cf879bd99aef38, type: 2}
+  currentState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
   soundManager: {fileID: 469011348}
   status1: {fileID: 1856190729}
   status2: {fileID: 1932825061}
