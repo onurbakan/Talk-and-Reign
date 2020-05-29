@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2b3bb38ae7b54a94eaa77d64fff709a5, type: 3}
-  m_Name: 7q
+  m_Name: Data 2
   m_EditorClassIdentifier: 
-  stateID: 7
-  positiveNextState: {fileID: 11400000, guid: bc0b0fb24f8ed164b9cf879bd99aef38, type: 2}
-  negativeNextState: {fileID: 11400000, guid: bc0b0fb24f8ed164b9cf879bd99aef38, type: 2}
+  stateID: 10
+  positiveNextState: {fileID: 11400000, guid: 04cc60cb4355e4f43a19968dc0cd6298, type: 2}
+  negativeNextState: {fileID: 11400000, guid: 04cc60cb4355e4f43a19968dc0cd6298, type: 2}
   stateType: 1
-  stateSound: {fileID: 8300000, guid: 8c793d9cb9a21c145b6c7fc9d202e42f, type: 3}
-  positivePopulationValue: 1
+  stateSound: {fileID: 8300000, guid: 3ee1acece85a4b64c9d60b68cbba2aa5, type: 3}
+  positivePopulationValue: 0
   positiveMoneyValue: -1
-  positiveArmyValue: 0
-  negativePopulationValue: -1
+  positiveArmyValue: 1
+  negativePopulationValue: 0
   negativeMoneyValue: 1
-  negativeArmyValue: 0
+  negativeArmyValue: -1
   checkPoint: 0
   canInform: 0
   canInformGoldPos: 0
-  canInformArmyPos: 0
-  canInformPopulationPos: 1
+  canInformArmyPos: 1
+  canInformPopulationPos: 0
   canInformGoldNeg: 1
   canInformArmyNeg: 0
   canInformPopulationNeg: 0
@@ -35,5 +35,5 @@ MonoBehaviour:
   canInformArmyPos1: 0
   canInformPopulationPos1: 0
   canInformGoldNeg1: 0
-  canInformArmyNeg1: 0
-  canInformPopulationNeg1: 1
+  canInformArmyNeg1: 1
+  canInformPopulationNeg1: 0

@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b3bb38ae7b54a94eaa77d64fff709a5, type: 3}
+  m_Name: Data 11
+  m_EditorClassIdentifier: 
+  stateID: 19
+  positiveNextState: {fileID: 11400000, guid: baaf33cacfaae9f43a695ba5c8d95a7b, type: 2}
+  negativeNextState: {fileID: 11400000, guid: baaf33cacfaae9f43a695ba5c8d95a7b, type: 2}
+  stateType: 1
+  stateSound: {fileID: 8300000, guid: 5cd2416aae13ca94289bdd5c8319112f, type: 3}
+  positivePopulationValue: -1
+  positiveMoneyValue: 1
+  positiveArmyValue: 0
+  negativePopulationValue: 1
+  negativeMoneyValue: -1
+  negativeArmyValue: 0
+  checkPoint: 0
+  canInform: 0
+  canInformGoldPos: 1
+  canInformArmyPos: 0
+  canInformPopulationPos: 0
+  canInformGoldNeg: 0
+  canInformArmyNeg: 0
+  canInformPopulationNeg: 1
+  canInformGoldPos1: 0
+  canInformArmyPos1: 0
+  canInformPopulationPos1: 1
+  canInformGoldNeg1: 1
+  canInformArmyNeg1: 0
+  canInformPopulationNeg1: 0
