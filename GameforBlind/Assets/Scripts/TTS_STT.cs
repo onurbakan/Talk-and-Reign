@@ -201,7 +201,7 @@ namespace IBM.Watsson.Examples
 
         public void AddTextToQueue(string text)
         {
-            Debug.Log("AddTextToQueue: " + text);
+            //Debug.Log("AddTextToQueue: " + text);
             if (!string.IsNullOrEmpty(text))
             {
                 textQueue.Enqueue(text);

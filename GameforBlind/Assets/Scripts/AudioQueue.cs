@@ -59,11 +59,11 @@ public class AudioQueue : MonoBehaviour
         if (audioSource != null)
         {
             audioQueue.Add(audioSource);
-            Debug.Log("Added Audio To Queue! Size: " + audioQueue.Count);
+            //Debug.Log("Added Audio To Queue! Size: " + audioQueue.Count);
         }
         else
         {
-            Debug.Log("Cannot add audio, no source found");
+            //Debug.Log("Cannot add audio, no source found");
         }
     }
 

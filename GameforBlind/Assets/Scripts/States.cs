@@ -30,7 +30,7 @@ public class States : MonoBehaviour
     {
         if (isOpen)
         {
-            Debug.Log(++index);
+            //Debug.Log(++index);
             saidYes?.Invoke();
             isOpen = false;
         }
@@ -41,7 +41,7 @@ public class States : MonoBehaviour
     {
         if (isOpen)
         {
-            Debug.Log(--index);
+            //Debug.Log(--index);
             saidNo?.Invoke();
             isOpen = false;
 

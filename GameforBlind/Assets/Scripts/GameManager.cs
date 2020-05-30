@@ -65,17 +65,17 @@ public class GameManager : MonoBehaviour
                 seconStatus = 2;
                 thirdStatus = 2;
                 soundManager.PlayCurrentState(currentState);
-                Debug.Log("0 landı No dedim");
-                Debug.Log(firstStatus);
-                Debug.Log(seconStatus);
-                Debug.Log(thirdStatus);
+                //Debug.Log("0 landı No dedim");
+                //Debug.Log(firstStatus);
+                //Debug.Log(seconStatus);
+                //Debug.Log(thirdStatus);
             }
             else
             {
-                Debug.Log("No dedim");
-                Debug.Log(firstStatus);
-                Debug.Log(seconStatus);
-                Debug.Log(thirdStatus);
+                //Debug.Log("No dedim");
+                //Debug.Log(firstStatus);
+                //Debug.Log(seconStatus);
+                //Debug.Log(thirdStatus);
                 currentState = currentState.negativeNextState;
 
                 soundManager.PlayCurrentState(currentState);
@@ -86,17 +86,17 @@ public class GameManager : MonoBehaviour
 
     private void SoundFinished()
     {
-        Debug.Log("Game Manager : Sound Bitti");
+        //Debug.Log("Game Manager : Sound Bitti");
         if (currentState.stateType == StateType.OnlySound)
         {
-            Debug.Log("[Game Manager] :[Only Sound] Yes Dedim");
+            //Debug.Log("[Game Manager] :[Only Sound] Yes Dedim");
             currentState = currentState.positiveNextState;
             soundManager.PlayCurrentState(currentState);
 
         }
         else if (currentState.stateType == StateType.AnswerSound)
         {
-            Debug.Log("[Game Manager] :[Answer] Input Açtım");
+            //Debug.Log("[Game Manager] :[Answer] Input Açtım");
 
             StartInput();
         }
@@ -111,7 +111,7 @@ public class GameManager : MonoBehaviour
     public void SaidYes()
     {
         currentStateAnswer = true;
-        Debug.Log("Yes Function");
+        //Debug.Log("Yes Function");
 
         firstStatus += currentState.positivePopulationValue;
         seconStatus += currentState.positiveMoneyValue;
@@ -131,7 +131,7 @@ public class GameManager : MonoBehaviour
     {
         currentStateAnswer = false;
 
-        Debug.Log("No Function");
+        //Debug.Log("No Function");
         firstStatus += currentState.negativePopulationValue;
         seconStatus += currentState.negativeMoneyValue;
         thirdStatus += currentState.negativeArmyValue;
@@ -146,7 +146,7 @@ public class GameManager : MonoBehaviour
 
     public void StartInput()
     {
-        Debug.Log("Input Başladı");
+        //Debug.Log("Input Başladı");
         stt.canListen = true;
         States.instance.isOpen = true;
     }
@@ -154,7 +154,7 @@ public class GameManager : MonoBehaviour
 
     public void StopInput()
     {
-        Debug.Log("Stop Input");
+        //Debug.Log("Stop Input");
         stt.canListen = false;
     }
 

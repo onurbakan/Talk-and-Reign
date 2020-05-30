@@ -28,7 +28,7 @@ public class SoundManager : MonoBehaviour
     {
         if (!_audioSource.isPlaying && canListen)
         {
-            Debug.Log("[Sound Manager] : Şarkı Bitti");
+            //Debug.Log("[Sound Manager] : Şarkı Bitti");
             canListen = false;
             soundFinished?.Invoke();
 
@@ -37,17 +37,17 @@ public class SoundManager : MonoBehaviour
         if (!_audioSource.isPlaying && canInform)
         {
             canInform = false;
-            Debug.Log("[Sound Manager] : Bilgilendirme Bitti");
+            //Debug.Log("[Sound Manager] : Bilgilendirme Bitti");
             indexAudio++;
 
             if (indexAudio == myAudioList.Count)
             {
-                Debug.Log("Invoke Inform");
+                //Debug.Log("Invoke Inform");
                 informFinished?.Invoke();
             }
             else
             {
-                Debug.Log("Bir daha çalıdm");
+                //Debug.Log("Bir daha çalıdm");
 
                 PlayMyAudioList();
             }
@@ -61,7 +61,7 @@ public class SoundManager : MonoBehaviour
     public void PlayCurrentState(SO_State input)
     {
 
-        Debug.Log("[Sound Manager] : Şarkım Başladı");
+        //Debug.Log("[Sound Manager] : Şarkım Başladı");
 
         _audioSource.clip = input.stateSound;
         _audioSource.Play();
@@ -105,7 +105,7 @@ public class SoundManager : MonoBehaviour
             {
                 myAudioList.Add(populationNegative);
             }
-            Debug.Log(myAudioList.Count);
+            //Debug.Log(myAudioList.Count);
             if (myAudioList.Count != 0)
             {
                 PlayMyAudioList();
@@ -147,7 +147,7 @@ public class SoundManager : MonoBehaviour
             {
                 myAudioList.Add(populationNegative);
             }
-            Debug.Log(myAudioList.Count);
+            //Debug.Log(myAudioList.Count);
             if (myAudioList.Count != 0)
             {
                 PlayMyAudioList();
@@ -165,7 +165,7 @@ public class SoundManager : MonoBehaviour
 
     public void PlayMyAudioList()
     {
-        Debug.Log("[Sound Manager] : Bilgilendirme Başladı");
+        //Debug.Log("[Sound Manager] : Bilgilendirme Başladı");
 
         _audioSource.clip = myAudioList[indexAudio];
         _audioSource.Play();
