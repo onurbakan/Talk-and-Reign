@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
     public SO_State currentState;
     public SoundManager soundManager;
 
-    float firstStatus = 10;
-    float seconStatus = 10;
-    float thirdStatus = 10;
+    float firstStatus = 2;
+    float seconStatus = 2;
+    float thirdStatus = 2;
 
     bool soundPlaying;
     bool currentStateAnswer;
@@ -40,15 +40,47 @@ public class GameManager : MonoBehaviour
     {
         if (currentStateAnswer)
         {
-            currentState = currentState.positiveNextState;
+            if (seconStatus == 0 || firstStatus ==0 || thirdStatus==0)
+            {
+                currentState = firstState;
+                firstStatus = 2;
+                seconStatus = 2;
+                thirdStatus = 2;
+                soundManager.PlayCurrentState(currentState);
+            }
+            else
+            {
+                currentState = currentState.positiveNextState;
 
-            soundManager.PlayCurrentState(currentState);
+                soundManager.PlayCurrentState(currentState);
+            }
+
         }
         else
         {
-            currentState = currentState.negativeNextState;
+            if (seconStatus == 0 || firstStatus == 0 || thirdStatus == 0)
+            {
+                currentState = firstState;
+                firstStatus = 2;
+                seconStatus = 2;
+                thirdStatus = 2;
+                soundManager.PlayCurrentState(currentState);
+                Debug.Log("0 landı No dedim");
+                Debug.Log(firstStatus);
+                Debug.Log(seconStatus);
+                Debug.Log(thirdStatus);
+            }
+            else
+            {
+                Debug.Log("No dedim");
+                Debug.Log(firstStatus);
+                Debug.Log(seconStatus);
+                Debug.Log(thirdStatus);
+                currentState = currentState.negativeNextState;
 
-            soundManager.PlayCurrentState(currentState);
+                soundManager.PlayCurrentState(currentState);
+            }
+
         }
     }
 
