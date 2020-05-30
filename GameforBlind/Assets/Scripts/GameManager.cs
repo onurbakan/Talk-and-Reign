@@ -130,13 +130,14 @@ public class GameManager : MonoBehaviour
     public void SaidNo()
     {
         currentStateAnswer = false;
-        soundManager.InformUser(currentState, false);
 
         Debug.Log("No Function");
         firstStatus += currentState.negativePopulationValue;
         seconStatus += currentState.negativeMoneyValue;
         thirdStatus += currentState.negativeArmyValue;
         UpdateUI();
+        
+        soundManager.InformUser(currentState, false);
         /*  currentState = currentState.negativeNextState;
           soundManager.PlayCurrentState(currentState);*/
         StopInput();
