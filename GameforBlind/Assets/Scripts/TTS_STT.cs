@@ -360,6 +360,13 @@ namespace IBM.Watsson.Examples
                             States.instance.DecreaseIndex();
 
                         }
+                        if (alt.transcript.Contains("exit") && ResultsSTTField.text.Contains("Interim")) // needs to be final or ECHO happens
+                        {
+                            UnityEditor.EditorApplication.isPlaying = false;
+                            Debug.Log("Exit int");
+                            Application.Quit();
+                        }
+
                     }
                     
                     if (res.keywords_result != null && res.keywords_result.keyword != null)
