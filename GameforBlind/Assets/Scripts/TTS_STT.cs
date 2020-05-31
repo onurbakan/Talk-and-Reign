@@ -362,7 +362,8 @@ namespace IBM.Watsson.Examples
                         }
                         if (alt.transcript.Contains("exit") && ResultsSTTField.text.Contains("Interim")) // needs to be final or ECHO happens
                         {
-                            UnityEditor.EditorApplication.isPlaying = false;
+                           // UnityEditor.EditorApplication.isPlaying = false;
+                           
                             Debug.Log("Exit int");
                             Application.Quit();
                         }

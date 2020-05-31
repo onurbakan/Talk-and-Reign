@@ -12,9 +12,9 @@ public class GameManager : MonoBehaviour
     public SO_State currentState;
     public SoundManager soundManager;
 
-    float firstStatus = 2;
-    float seconStatus = 2;
-    float thirdStatus = 2;
+    float firstStatus = 5;
+    float seconStatus = 5;
+    float thirdStatus = 5;
 
     bool soundPlaying;
     bool currentStateAnswer;
@@ -43,9 +43,9 @@ public class GameManager : MonoBehaviour
             if (seconStatus == 0 || firstStatus ==0 || thirdStatus==0)
             {
                 currentState = firstState;
-                firstStatus = 2;
-                seconStatus = 2;
-                thirdStatus = 2;
+                firstStatus = 5;
+                seconStatus = 5;
+                thirdStatus = 5;
                 soundManager.PlayCurrentState(currentState);
             }
             else
@@ -61,9 +61,9 @@ public class GameManager : MonoBehaviour
             if (seconStatus == 0 || firstStatus == 0 || thirdStatus == 0)
             {
                 currentState = firstState;
-                firstStatus = 2;
-                seconStatus = 2;
-                thirdStatus = 2;
+                firstStatus = 5;
+                seconStatus = 5;
+                thirdStatus = 5;
                 soundManager.PlayCurrentState(currentState);
                 //Debug.Log("0 landı No dedim");
                 //Debug.Log(firstStatus);

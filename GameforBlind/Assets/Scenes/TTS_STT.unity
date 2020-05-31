@@ -455,12 +455,12 @@ MonoBehaviour:
   canListen: 0
   canInform: 0
   indexAudio: 0
-  goldPositive: {fileID: 8300000, guid: cd2dfff500b7184419863c466abf2351, type: 3}
-  armyPositive: {fileID: 8300000, guid: cb70ce63fccc0f84fb78716a95ecdce2, type: 3}
-  populationPositive: {fileID: 8300000, guid: cdd62e7d0acfb7943b892ed7200b24c0, type: 3}
-  goldNegative: {fileID: 8300000, guid: c9241b075d3cd864d941264b47226d2a, type: 3}
-  armyNegative: {fileID: 8300000, guid: e71af0040e6016b4f94e12706b8631e2, type: 3}
-  populationNegative: {fileID: 8300000, guid: 5df48097d0fd16945a64fced29444e69, type: 3}
+  goldPositive: {fileID: 8300000, guid: 6addbb580a096264fb6c7d2a4820c113, type: 3}
+  armyPositive: {fileID: 8300000, guid: dbacce14c2722c547a5a5938c1b14b14, type: 3}
+  populationPositive: {fileID: 8300000, guid: e696929d82be5c54ead8656cd577519e, type: 3}
+  goldNegative: {fileID: 8300000, guid: 0c22bf186b7f4394a8e8cd9b549a84b7, type: 3}
+  armyNegative: {fileID: 8300000, guid: 5645ebb68e00fd049a1fdaca403d7d11, type: 3}
+  populationNegative: {fileID: 8300000, guid: 53def44c150f56641b8e2e881363cb8d, type: 3}
   myAudioList: []
 --- !u!1 &477887405
 GameObject:
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd653c4687dc260438be6c8124b045c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  firstState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
+  firstState: {fileID: 11400000, guid: 40f8a90578a82a64ca1c2add3cf8dac9, type: 2}
   stt: {fileID: 477887406}
   currentState: {fileID: 11400000, guid: 34d8efefa7dbdb84f911ea560d4d97d0, type: 2}
   soundManager: {fileID: 469011348}
